@@ -18,7 +18,7 @@ app.use(cors({
 app.use(morgan("combined"));
 
 app.use('/planets', planetsRouter);
-app.use(launchesRouter);
+app.use('/launches', launchesRouter);
 
 // This means if any path other than specifically defined here comes,
 // load the static index.html. Client will handle the routing
