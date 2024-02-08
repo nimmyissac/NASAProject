@@ -34,14 +34,16 @@ async function loadPlanetsData() {
 }
 
 async function getAllPlanets() {
-    return await planets.find({});
+    // __v:0 excludes that field from the result
+    let _planets = await planets.find({}, { "__v": 0, "_id": 0 });
+    return _planets;
 }
 
 async function savePlanet(planet) {
     try {
         await planets.updateOne(
-            { keplerName: data['kepler_name'] },
-            { keplerName: data['kepler_name'] },
+            { keplerName: planet['kepler_name'] },
+            { keplerName: planet['kepler_name'] },
             { upsert: true });
     } catch (err) {
         console.log("could not save planet ", err);

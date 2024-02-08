@@ -7,11 +7,11 @@ const launchesSchema = new mongoose.Schema({
         required: true
     },
     mission: {
-        type: string,
+        type: String,
         required: true
     },
     rocket: {
-        type: string,
+        type: String,
         required: true
     },
     launchDate: {
@@ -19,7 +19,7 @@ const launchesSchema = new mongoose.Schema({
         required: true
     },
     destination: {
-        type: string,
+        type: String,
         required: true
     },
     customers: [String],
